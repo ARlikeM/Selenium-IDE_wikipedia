@@ -1,0 +1,87 @@
+{
+  "id": "490141bb-52ac-4bdd-b82b-9f9ac4583b62",
+  "version": "2.0",
+  "name": "wikipedia",
+  "url": "https://www.wikipedia.org/",
+  "tests": [{
+    "id": "5b6cac65-0463-449b-8ed3-f2a01a0b95bf",
+    "name": "Wyszukiwanie artykułów",
+    "commands": [{
+      "id": "761d2f08-3afe-48ee-ab6f-dbdc132c3638",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.wikipedia.org/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec977632-993c-4aee-950b-b95a5d342233",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x1012",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6d1619d-3156-4d7f-816d-36212c0bae5c",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchInput",
+      "targets": [
+        ["id=searchInput", "id"],
+        ["name=search", "name"],
+        ["css=#searchInput", "css:finder"],
+        ["xpath=//input[@id='searchInput']", "xpath:attributes"],
+        ["xpath=//div[@id='search-input']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8bada163-2cc0-47cd-9b73-a0f1569e4aab",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchInput",
+      "targets": [
+        ["id=searchInput", "id"],
+        ["name=search", "name"],
+        ["css=#searchInput", "css:finder"],
+        ["xpath=//input[@id='searchInput']", "xpath:attributes"],
+        ["xpath=//div[@id='search-input']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "kyoto"
+    }, {
+      "id": "8f2d512b-9009-4a4d-a95a-66125e87c822",
+      "comment": "",
+      "command": "click",
+      "target": "css=.active .suggestion-title",
+      "targets": [
+        ["css=.active .suggestion-title", "css:finder"],
+        ["xpath=//div[@id='typeahead-suggestions']/div/a/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Kioto')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b045a0d7-cc10-4539-9624-7597ef42cc82",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.mw-page-title-main",
+      "targets": [
+        ["css=.mw-page-title-main", "css:finder"],
+        ["xpath=//h1[@id='firstHeading']/span", "xpath:idRelative"],
+        ["xpath=//h1/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Kioto')]", "xpath:innerText"]
+      ],
+      "value": "Kioto"
+    }]
+  }],
+  "suites": [{
+    "id": "2fa70dc6-d75b-4cd6-a093-258ba26012d9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5b6cac65-0463-449b-8ed3-f2a01a0b95bf"]
+  }],
+  "urls": ["https://www.wikipedia.org/"],
+  "plugins": []
+}
